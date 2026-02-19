@@ -38,8 +38,8 @@ echo -e "${YELLOW}Pulling model (llama3.2:3b)...${NC}"
 ollama pull llama3.2:3b
 ollama pull nomic-embed-text
 
-#3.5 fix ddtrace
-pkg install cmake patchelf
+#3.5 pre-install local utils 
+pkg install -y cmake patchelf binutils make
 
 # 4. Install Letta
 echo -e "${GREEN}[4/7] Installing Letta server...${NC}"
