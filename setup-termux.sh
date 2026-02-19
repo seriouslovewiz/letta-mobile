@@ -43,6 +43,8 @@ pkg install -y cmake patchelf binutils make
 
 # 4. Install Letta
 echo -e "${GREEN}[4/7] Installing Letta server...${NC}"
+python -m venv ~/.letta/venv
+source ~/.letta/venv/bin/activate
 pip install letta
 
 # 5. Configure environment
@@ -50,6 +52,9 @@ echo -e "${GREEN}[5/7] Creating configuration...${NC}"
 mkdir -p ~/.letta
 
 cat > ~/.letta/.env << 'EOF'
+# Activate venv
+source ~/.letta/venv/bin/activate
+
 # Ollama (local LLM)
 OLLAMA_BASE_URL=http://localhost:11434/v1
 
